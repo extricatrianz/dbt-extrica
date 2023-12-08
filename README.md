@@ -1,5 +1,7 @@
 
-## <b>Extrica DBT Adapter </b>
+  
+# dbt-extrica
+
 The ```dbt-extrica``` adapter allows users to interact with [Extrica's](https://www.extrica.ai)
 Trino Engine, a distributed SQL query engine, using dbt. 
 This adapter is designed to facilitate the use of dbt for transforming and modeling data within Extrica.
@@ -25,7 +27,7 @@ Each catalog corresponds to a specific data source, enabling a unified approach 
 ## Connecting to Extrica
 
 #### Example profiles.yml 
-
+Here is a  example of a dbt-extrica profile parameters. At a minimum, you need to specify `type`, `method`, `username`, `password` `host`, `port`, `schema`, `catalog` and `threads`.
 <File name='~/.dbt/profiles.yml'>
 
 ```yaml
@@ -71,3 +73,29 @@ Each catalog corresponds to a specific data source, enabling a unified approach 
 | catalog    | string   | Name of the catalog representing the data source. |
 | threads    | integer  | Number of threads for parallel execution of queries. (1 or more |
 
+## Getting Started
+#### Install dbt-extrica adapter
+
+```sh
+ pip install  dbt-extrica
+```
+#### Initialize dbt project 
+```sh
+dbt init
+```
+* <b> Select Adapters </b> : After running the `dbt init` command, you'll be prompted to select adapters from a list of available adapters. Choose the appropriate adapter for your project.
+* <b> Modify Profiles.yml </b> : The dbt init command will create a project structure in current dir and a .dbt folder inside users of your system. Inside .dbt folder, you'll find a profiles.yml file.
+
+#### Configure Profiles.yml
+* Open the profiles.yml file in a text editor.
+* Locate the section for your selected adapter and project (e.g., extrica).
+* Add the necessary connection details such as host, port, user, password, etc.
+* Save and close the profiles.yml file.
+#### Check connection is successful 
+```sh
+dbt debug
+```
+#### To run all models use below command
+```sh
+dbt run
+```
