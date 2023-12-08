@@ -8,8 +8,11 @@ This adapter is designed to facilitate the use of dbt for transforming and model
 #### Features
 - **Extrica Compatibility:** Compatible with Extrica's Trino Query Engine, allowing users to leverage dbt within Extrica.
 - **JWT Authentication:** Utilizes JWT for secure authentication with Extrica. The adapter handles the generation of JWT tokens behind the scenes via username and password configured in profiles.yml.
+- Extrica eliminates **complex data-engineering** and de-couples migrations to help businesses experience a quantum leap in the insights. 
 
 ## Description 
+### About dbt
+dbt (data build tool) is a powerful data transformation workflow tool that facilitates quick and collaborative deployment of analytics code. It follows software engineering best practices such as modularity, continuous integration/deployment (CI/CD), testing, and documentation. With dbt, individuals familiar with SQL can easily build production-grade data pipelines.
 
 ### Connecting to Multiple Data Sources
 > <b> Challenges in Limited Connectivity </b> <br>
