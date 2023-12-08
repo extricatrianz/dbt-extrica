@@ -1,0 +1,25 @@
+default:
+  outputs:
+    dev:
+      type: extrica
+      method: jwt 
+      username: [dev_user]
+      password: [password]   
+      host: [hostname]
+      port: [port number]
+      schema: [dev_schema]
+      catalog: [catalog_name]
+      threads: [1 or more]
+
+    prod:
+      type: extrica
+      method: jwt  
+      username: [prod_user]
+      password: [prod_password]   
+      host: [hostname]
+      port: [port number]
+      schema: [prod_schema]
+      catalog: [catalog_name]
+      threads: [1 or more]
+
+  target: dev
