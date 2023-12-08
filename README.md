@@ -11,16 +11,16 @@ This adapter is designed to facilitate the use of dbt for transforming and model
 - Extrica eliminates **complex data-engineering** and de-couples migrations to help businesses experience a quantum leap in the insights. 
 
 ## Description 
-### About dbt
+#### About DBT 
 dbt (data build tool) is a powerful data transformation workflow tool that facilitates quick and collaborative deployment of analytics code. It follows software engineering best practices such as modularity, continuous integration/deployment (CI/CD), testing, and documentation. With dbt, individuals familiar with SQL can easily build production-grade data pipelines.
 
-### Connecting to Multiple Data Sources
+#### Connecting to Multiple Data Sources
 > <b> Challenges in Limited Connectivity </b> <br>
 > Default configurations in dbt make it challenging to connect to databases beyond the primary one associated with the project.
 > Many organizations deal with diverse data sources, such as Oracle, Snowflake, SQL Server, Google BigQuery, Delta Lake, Iceberg, AWS Redshift, Vertica, Azure Synapse, MongoDB, AWS S3 and other data sources.
 > Integrating and transforming data from these varied sources efficiently becomes essential for comprehensive analytics.
 
-### Solution: Leveraging Trino and Catalogs in Extrica
+#### Solution: Leveraging Trino and Catalogs in Extrica
 Extrica's Trino is an advanced query engine that excels in federated queries across multiple data sources and also allows the writeback capabilities to variety of data sources. 
 Its ability to connect to various databases and process SQL queries at scale makes it an ideal solution for organizations dealing with diverse data sources.
 
