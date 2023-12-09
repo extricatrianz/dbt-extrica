@@ -1,21 +1,26 @@
 
-## <b>Extrica DBT Adapter </b>
+  
+# dbt-extrica
+
 The ```dbt-extrica``` adapter allows users to interact with [Extrica's](https://www.extrica.ai)
 Trino Engine, a distributed SQL query engine, using dbt. 
 This adapter is designed to facilitate the use of dbt for transforming and modeling data within Extrica.
 #### Features
 - **Extrica Compatibility:** Compatible with Extrica's Trino Query Engine, allowing users to leverage dbt within Extrica.
 - **JWT Authentication:** Utilizes JWT for secure authentication with Extrica. The adapter handles the generation of JWT tokens behind the scenes via username and password configured in profiles.yml.
+- Extrica eliminates **complex data-engineering** and de-couples migrations to help businesses experience a quantum leap in the insights. 
 
 ## Description 
+#### About DBT 
+dbt (data build tool) is a powerful data transformation workflow tool that facilitates quick and collaborative deployment of analytics code. It follows software engineering best practices such as modularity, continuous integration/deployment (CI/CD), testing, and documentation. With dbt, individuals familiar with SQL can easily build production-grade data pipelines.
 
-### Connecting to Multiple Data Sources
+#### Connecting to Multiple Data Sources
 > <b> Challenges in Limited Connectivity </b> <br>
 > Default configurations in dbt make it challenging to connect to databases beyond the primary one associated with the project.
 > Many organizations deal with diverse data sources, such as Oracle, Snowflake, SQL Server, Google BigQuery, Delta Lake, Iceberg, AWS Redshift, Vertica, Azure Synapse, MongoDB, AWS S3 and other data sources.
 > Integrating and transforming data from these varied sources efficiently becomes essential for comprehensive analytics.
 
-### Solution: Leveraging Trino and Catalogs in Extrica
+#### Solution: Leveraging Trino and Catalogs in Extrica
 Extrica's Trino is an advanced query engine that excels in federated queries across multiple data sources and also allows the writeback capabilities to variety of data sources. 
 Its ability to connect to various databases and process SQL queries at scale makes it an ideal solution for organizations dealing with diverse data sources.
 
@@ -25,7 +30,7 @@ Each catalog corresponds to a specific data source, enabling a unified approach 
 ## Connecting to Extrica
 
 #### Example profiles.yml 
-
+Here is a  example of a dbt-extrica profile parameters. At a minimum, you need to specify `type`, `method`, `username`, `password` `host`, `port`, `schema`, `catalog` and `threads`.
 <File name='~/.dbt/profiles.yml'>
 
 ```yaml
@@ -71,3 +76,29 @@ Each catalog corresponds to a specific data source, enabling a unified approach 
 | catalog    | string   | Name of the catalog representing the data source. |
 | threads    | integer  | Number of threads for parallel execution of queries. (1 or more |
 
+## Getting Started
+#### Install dbt-extrica adapter
+
+```sh
+ pip install  dbt-extrica
+```
+#### Initialize dbt project 
+```sh
+dbt init
+```
+* <b> Select Adapters </b> : After running the `dbt init` command, you'll be prompted to select adapters from a list of available adapters. Choose the appropriate adapter for your project.
+* <b> Modify Profiles.yml </b> : The dbt init command will create a project structure in current dir and a .dbt folder inside users of your system. Inside .dbt folder, you'll find a profiles.yml file.
+
+#### Configure Profiles.yml
+* Open the profiles.yml file in a text editor.
+* Locate the section for your selected adapter and project (e.g., extrica).
+* Add the necessary connection details such as host, port, user, password, etc.
+* Save and close the profiles.yml file.
+#### Check connection is successful 
+```sh
+dbt debug
+```
+#### To run all models use below command
+```sh
+dbt run
+```
