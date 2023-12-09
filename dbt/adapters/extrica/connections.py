@@ -66,9 +66,11 @@ class ExtricaCredentials(Credentials, metaclass=ABCMeta):
             "method",
             "host",
             "port",
-            "user",
+            "username",
+            "password",
             "database",
             "schema",
+            "catalog",
             "cert",
             "prepared_statements_enabled",
         )
