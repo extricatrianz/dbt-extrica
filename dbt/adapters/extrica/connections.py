@@ -110,8 +110,8 @@ class ExtricaJwtCredentials(ExtricaCredentials):
         global jwt_handler 
         if jwt_handler == None:
             jwt_handler = JWTHandler(host=self.host ,username= self.username, password= self.password)
-            jwt_token = jwt_handler.get_token()      
-        return trino.auth.JWTAuthentication(jwt_token)
+            self.jwt_token = jwt_handler.get_token()      
+        return trino.auth.JWTAuthentication(self.jwt_token)
 
 class ConnectionWrapper(object):
     """Wrap a Trino connection in a way that accomplishes two tasks:
